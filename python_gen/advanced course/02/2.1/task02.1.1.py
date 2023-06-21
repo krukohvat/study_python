@@ -1,0 +1,10 @@
+a = int(input())
+b = int(input())
+from math import *
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(int(a/b))
+print(a%b)
+print(sqrt(a**10 + b**10))

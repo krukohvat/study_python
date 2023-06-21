@@ -1,0 +1,5 @@
+cd ...\python_gen\...course
+for /l %i in (1,1,9) do for /l %j in (1,1,9) do md 0%i\0%i.%j
+for /l %i in (10,1,19) do for /l %j in (1,1,9) do md %i\%i.%j
+for /l %i in (1,1,9) do for /l %j in (1,1,9) do for /l %k in (1,1,9) do cd . > 0%i\0%i.%j\task0%i.%j.%k.py
+for /l %i in (10,1,19) do for /l %j in (1,1,9) do for /l %k in (1,1,9) do cd . > %i\%i.%j\task%i.%j.%k.py
