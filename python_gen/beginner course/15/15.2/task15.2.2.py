@@ -3,9 +3,6 @@
 '''
 from math import *
 from random import *
-ch = int(input())
+ch = int(input('Введите верхний предел:'))
 num = randint(1, ch)
-if round(log(ch, 2)) >= log(ch, 2):
-    print(round(log(ch, 2)))
-else:
-    print(round(log(ch, 2))+1)
+print(ceil(log(ch, 2)))
