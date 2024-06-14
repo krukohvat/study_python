@@ -1,0 +1,58 @@
+numbers = {1, 1, 2, 3, 5, 8, 3}  # создаем множество
+
+numbers.add(21)  # добавляем число 21 в множество
+для использования метода add() требуется предварительно созданное множество
+
+Для удаления элементов из множества используются методы:
+    remove();
+    discard();
+    pop().
+
+Метод remove() удаляет элемент из множества с генерацией исключения (ошибки) в случае, если такого элемента нет (KeyError)
+numbers = {1, 2, 3, 4, 5}
+numbers.remove(3)
+numbers: {1, 2, 4, 5}
+
+Метод discard() удаляет элемент из множества без генерации исключения (ошибки), если элемент отсутствует
+numbers = {1, 2, 3, 4, 5}
+numbers.discard(10)
+print(numbers)
+numbers: {1, 2, 3, 4, 5}
+
+Метод pop() можно воспринимать как неконтролируемый способ удаления элементов по одному из множества - не принимает аргумент, и возвращает удаленное значение:
+numbers = {1, 2, 3, 4, 5}
+numbers.pop()
+1
+numbers: {2, 3, 4, 5}
+
+Метод clear() удаляет все элементы из множества: numbers.clear()
+
+myset1 = {1, 2, 3, 4, 5}
+myset2 = {3, 4, 6, 7, 8}
+
+union() возвращает новое множество в которое входят все элементы множеств myset1 и myset2 (A | B -> A.union(B))
+myset3 = myset1.union(myset2): {1, 2, 3, 4, 5, 6, 7, 8}
+
+intersection() возвращает новое множество в которое входят общие элементы множеств myset1 и myset2 (оператор & идентичен intersection) (A & B -> A.intersection(B))
+myset4 = myset1.intersection(myset2): {3, 4} 
+
+difference() - все элементы первого множества, не входящие во второе множество (- is equal) (A - B -> A.difference(B))
+myset5 = myset1.difference(myset2): {1, 2, 5}
+
+Симметрическая разность множеств – это множество, включающее все элементы исходных множеств, не принадлежащие одновременно обоим исходным множествам. Для этой операции существует метод symmetric_difference() (or ^) (A ^ B -> A.symmetric_difference(B))
+myset6 = myset1.symmetric_difference(myset2): {1, 2, 5, 6, 7, 8}
+
+Метод update() (or |=) изменяет ИСХОДНОЕ множество по объединению: myset1.update(myset2)  # изменяем множество myset1 (A |= B -> A.update(B))
+Метод intersection_update() (or &=) изменяет исходное множество по пересечению: myset1.intersection_update(myset2)  # изменяем множество myset1 (A &= B -> A.intersection_update(B))
+Метод difference_update() (or -=) изменяет исходное множество по разности: myset1.difference_update(myset2)  # изменяем множество myset1 (A -= B -> A.difference_update(B))
+Метод symmetric_difference_update() (^=) изменяет исходное множество по симметрической разности: myset1.symmetric_difference_update(myset2)  # изменяем множество myset1 (A^B)
+
+set1 = {2, 3}
+set2 = {1, 2, 3, 4, 5, 6}
+print(set1.issubset(set2)) -> True (В этом примере set2 содержит все элементы set1. Это означает, что set1 – подмножество set2) (set1 <= set2)
+
+set1 = {'a', 'b', 'c', 'd', 'e'}
+set2 = {'c', 'e'}
+print(set1.issuperset(set2)) -> True (В этом примере set1 содержит все элементы set2. Это означает, что set1 – надмножество set2) (set1 >= set2)
+
+Для определения отсутствия общих элементов в множествах используется метод isdisjoint() (set1.isdisjoint(set2))
